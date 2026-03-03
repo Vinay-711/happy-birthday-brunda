@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Brunda! 🎂</title>
+    <meta name="description" content="A special birthday wish for Brunda – celebrating an amazing friend!">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ── page wrapper ── */
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 60px;
+            gap: 36px;
+        }
+
+        /* ── floating emoji balloons ── */
+        .balloon {
+            position: fixed;
+            font-size: 2.2rem;
+            animation: floatUp linear infinite;
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.85;
+            }
+
+            100% {
+                transform: translateY(-15vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        /* ── stars / sparkles ── */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+
+        /* ── main card ── */
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 28px;
+            padding: 50px 40px 40px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.6) translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .cake-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 10px;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2.4rem;
+            background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .message {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 26px;
+            font-weight: 300;
+        }
+
+        .message strong {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .btn-surprise {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 34px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff6a88, #ff99ac);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 106, 136, 0.45);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-surprise::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-surprise:hover::before {
+            left: 100%;
+        }
+
+        .btn-surprise:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 10px 30px rgba(255, 106, 136, 0.55);
+        }
+
+        .btn-surprise:active {
+            transform: scale(0.97);
+        }
+
+        /* ── cute cats section ── */
+        .cats-section {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .cats-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 24px;
+        }
+
+        .cats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .cat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: catSlideIn 0.7s ease forwards;
+            cursor: default;
+        }
+
+        .cat-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .cat-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .cat-card:nth-child(3) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes catSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cat-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        .cat-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cat-card .cat-caption {
+            padding: 16px 18px;
+            text-align: center;
+        }
+
+        .cat-card .cat-caption p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .cat-card .cat-caption .cat-emoji {
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        /* ── surprise message overlay ── */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .surprise-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 44px 38px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.7);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .overlay.active .surprise-card {
+            transform: scale(1);
+        }
+
+        .surprise-card .emoji-big {
+            font-size: 3.4rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .surprise-card h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 14px;
+        }
+
+        .surprise-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .surprise-card .surprise-cat {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 215, 0, 0.5);
+            margin: 18px auto 10px;
+            display: block;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        .btn-close {
+            margin-top: 24px;
+            padding: 10px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            background: transparent;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── confetti canvas ── */
+        canvas#confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        /* ── photo gallery section ── */
+        .photo-section {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .photo-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 24px;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .photo-frame {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            animation: photoReveal 0.8s ease forwards;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .photo-frame:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .photo-frame:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes photoReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-6px) scale(1.03) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .photo-frame:nth-child(2):hover {
+            transform: translateY(-6px) scale(1.03) rotate(1deg);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-frame .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 16px 14px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+            text-align: center;
+        }
+
+        .photo-frame .photo-label p {
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-frame .photo-label .sparkle-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(255, 215, 0, 0.25);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            color: #ffd700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* ── responsive ── */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 36px 24px 32px;
+            }
+
+            .cats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cats-title {
+                font-size: 1.6rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- main card -->
+        <div class="card">
+            <span class="cake-emoji">🎂</span>
+            <h1>Happy Birthday</h1>
+            <span class="name">Brunda! 🎉</span>
+
+            <p class="message">
+                Hey <strong>Brunda!</strong><br>
+                Wishing you the most amazing birthday ever! 🥳<br>
+                You're an <strong>incredible friend</strong> and the world is brighter because of you. ✨<br>
+                Here's to more laughs, adventures, and unforgettable memories together! 🎈🎊
+            </p>
+
+            <button class="btn-surprise" id="surpriseBtn" onclick="surprise()">
+                🎁 Click for Surprise
+            </button>
+        </div>
+
+        <!-- photo gallery section -->
+        <div class="photo-section">
+            <h2 class="photo-title">✨ The Birthday Girl ✨</h2>
+            <div class="photo-gallery">
+
+                <div class="photo-frame">
+                    <img src="brunda1.jpg" alt="Brunda looking gorgeous">
+                    <div class="photo-label">
+                        <p>Looking absolutely stunning! 💫</p>
+                        <span class="sparkle-badge">✨ Queen vibes ✨</span>
+                    </div>
+                </div>
+
+                <div class="photo-frame">
+                    <img src="brunda2.jpg" alt="Brunda looking cute">
+                    <div class="photo-label">
+                        <p>Cuteness overload! 🦋</p>
+                        <span class="sparkle-badge">🎉 Birthday girl 🎉</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- cute cats section -->
+        <div class="cats-section">
+            <h2 class="cats-title">🐾 Some Pookie Cats for You! 🐾</h2>
+            <div class="cats-grid">
+
+                <div class="cat-card">
+                    <img src="cat_party.png" alt="Cute pookie cat with birthday cake">
+                    <div class="cat-caption">
+                        <span class="cat-emoji">🎂🐱</span>
+                        <p>This pookie made you a cake! Happy birthday, Brunda!</p>
+                    </div>
+                </div>
+
+                <div class="cat-card">
+                    <img src="cat_balloon.png" alt="Adorable cat holding a heart balloon">
+                    <div class="cat-caption">
+                        <span class="cat-emoji">🎈💛</span>
+                        <p>Sending you all the birthday balloons & good vibes!</p>
+                    </div>
+                </div>
+
+                <div class="cat-card">
+                    <img src="cats_together.png" alt="Two cute cats celebrating together">
+                    <div class="cat-caption">
+                        <span class="cat-emoji">🎉👯</span>
+                        <p>Squad's ready to party! Let's goooo! 🥳</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- surprise overlay -->
+    <div class="overlay" id="overlay">
+        <div class="surprise-card">
+            <span class="emoji-big">🥳🎊🎉</span>
+            <h2>You're the Best, Brunda!</h2>
+            <img src="brunda1.jpg" alt="Birthday girl Brunda" class="surprise-cat">
+            <p>
+                Cheers to another year of being absolutely awesome! 🍰<br><br>
+                May your day be filled with happiness, good vibes, and everything wonderful you deserve as a friend.
+                💛<br><br>
+                Keep being the amazing person you are! 🌟
+            </p>
+            <button class="btn-close" onclick="closeOverlay()">Close ✨</button>
+        </div>
+    </div>
+
+    <canvas id="confetti"></canvas>
+
+    <script>
+        /* ── Floating Balloons ── */
+        const balloonEmojis = ['🎈', '🎉', '🎊', '⭐', '🌟', '💛', '🎁', '🧁', '🍰', '✨', '🐱'];
+        function createBalloon() {
+            const el = document.createElement('div');
+            el.className = 'balloon';
+            el.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDuration = (5 + Math.random() * 6) + 's';
+            el.style.animationDelay = Math.random() * 2 + 's';
+            el.style.fontSize = (1.4 + Math.random() * 1.6) + 'rem';
+            document.body.appendChild(el);
+            el.addEventListener('animationend', () => el.remove());
+        }
+        setInterval(createBalloon, 600);
+        for (let i = 0; i < 8; i++) createBalloon();
+
+        /* ── Sparkles ── */
+        for (let i = 0; i < 30; i++) {
+            const s = document.createElement('div');
+            s.className = 'sparkle';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.top = Math.random() * 100 + 'vh';
+            s.style.animationDelay = Math.random() * 3 + 's';
+            s.style.width = s.style.height = (2 + Math.random() * 4) + 'px';
+            document.body.appendChild(s);
+        }
+
+        /* ── Confetti ── */
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        let confettiPieces = [];
+        let confettiRunning = false;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const colors = ['#ff6a88', '#ffd700', '#00d2ff', '#a855f7', '#34d399', '#fb923c', '#f472b6', '#60a5fa'];
+
+        function spawnConfetti() {
+            for (let i = 0; i < 180; i++) {
+                confettiPieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    w: 6 + Math.random() * 6,
+                    h: 4 + Math.random() * 4,
+                    rot: Math.random() * 360,
+                    rotSpeed: (Math.random() - 0.5) * 8,
+                    vy: 2 + Math.random() * 3,
+                    vx: (Math.random() - 0.5) * 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    opacity: 1
+                });
+            }
+        }
+
+        function drawConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confettiPieces.forEach((c) => {
+                ctx.save();
+                ctx.translate(c.x, c.y);
+                ctx.rotate((c.rot * Math.PI) / 180);
+                ctx.globalAlpha = c.opacity;
+                ctx.fillStyle = c.color;
+                ctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h);
+                ctx.restore();
+
+                c.y += c.vy;
+                c.x += c.vx;
+                c.rot += c.rotSpeed;
+
+                if (c.y > canvas.height) {
+                    c.opacity -= 0.02;
+                }
+            });
+            confettiPieces = confettiPieces.filter(c => c.opacity > 0);
+
+            if (confettiPieces.length > 0) {
+                requestAnimationFrame(drawConfetti);
+            } else {
+                confettiRunning = false;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function startConfetti() {
+            spawnConfetti();
+            if (!confettiRunning) {
+                confettiRunning = true;
+                drawConfetti();
+            }
+        }
+
+        /* ── Surprise ── */
+        function surprise() {
+            startConfetti();
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function closeOverlay() {
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+
+</body>
+
+</html>
